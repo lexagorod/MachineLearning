@@ -6,12 +6,11 @@ Created on Mon Jun  4 19:24:25 2018
 """
 
 import numpy as np
-from lightfm.datasets import fetch_movielens
 from lightfm import LightFM
 from pandas import read_csv
 from scipy.sparse import coo_matrix
 from lightfm.evaluation import precision_at_k
-from operator import itemgetter
+
 
 
 
@@ -87,7 +86,7 @@ def determine_best_model(data):
 
 def sample_recommendation(model, data, user_ids):
 
-    #number of users and movies in training data
+    #number of users and books in training data
     n_users, n_items = data['train'].shape
     for user_id in user_ids:
     
